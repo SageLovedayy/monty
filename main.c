@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 	/* Free memory and close the file */
 	cleanupAndExit(&current_state, stack, line_num);
 
-	free(stack);
+	/*free(stack);*/
 
 	return (0);
 }
