@@ -33,3 +33,28 @@ void op_add(stack_t **stack, unsigned int line_number)
 void op_nop(__attribute__((unused)) stack_t **stack
 , __attribute__((unused)) unsigned int line_number)
 { }
+
+/**
+ * op_sub - Perform a subtraction operation on the stack
+ * @stack: Pointer to the stack
+ * @line_number: Line number in the file
+ */
+void op_sub(stack_t **stack, unsigned int line_number)
+{
+	size_t elements = len(*stack);
+	int subtractor;
+
+	if (elements < 2)
+	{
+		fclose(current_state.file);
+		free(current_state.line);
+
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		emptyStack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	subtractor = (*stack)->n;
+	popStack(stack);
+	(*stack)->n -= subtractor;
+}

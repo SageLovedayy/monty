@@ -119,7 +119,7 @@ void op_pop(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **h);
 void op_swap(stack_t **stack, unsigned int line_number);
 void op_add(stack_t **stack, unsigned int line_number);
-
+void op_sub(stack_t **stack, unsigned int line_number);
 /**
  * op_nop - stack op nop
  * @stack: stack
