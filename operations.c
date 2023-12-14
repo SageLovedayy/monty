@@ -43,7 +43,6 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	}
 	popStack(stack);
-	return;
 }
 
 /**
@@ -67,3 +66,56 @@ void popStack(stack_t **h)
 		free(del);
 	}
 }
+
+/**
+ * len - Get the number of elements in the stack
+ * @stack: Pointer to the stack
+ * Return: Number of elements
+ */
+size_t len(stack_t *stack)
+{
+	size_t count = 0;
+	stack_t *current = stack;
+
+	while (current != NULL)
+	{
+		count++;
+		current = current->next;
+	}
+
+	return (count);
+}
+
+
+
+/**
+ * swap - Perform a swap operation on the stack
+ * @stack: Pointer to the stack
+ * @line_number: Line number in the file
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	size_t elements = len(*stack);
+	int first_value;
+	int second_value;
+
+	if (elements < 2)
+	{
+		fclose(current_state.file);
+		free(current_state.line);
+
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		emptyStack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	first_value = (*stack)->n;
+
+	popStack(stack);
+
+	second_value = (*stack)->n;
+	(*stack)->n = first_value;
+	pushStack(stack, second_value);
+}
+
+

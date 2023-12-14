@@ -1,5 +1,5 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef __MAIN_H
+#define __MAIN_H
 
 #define _POSIX_C_SOURCE 200809L
 
@@ -91,6 +91,8 @@ stack_t *pushQueue(stack_t **head, const int n);
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 void handle_error(unsigned int line_number, stack_t *stack);
 void push(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+size_t len(stack_t *stack);
 
 int is_number(const char *n);
 
@@ -110,12 +112,4 @@ void handleUnknownOpcode(input_state *state
 /* Function to free memory and close the file */
 void cleanupAndExit(input_state *state, stack_t *stack, unsigned int line_num);
 
-void freeStack(stack_t *head);
-
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void popStack(stack_t **h);
-void swap(stack_t **stack, unsigned int line_number);
-size_t len(stack_t *stack);
-
-#endif /*monty.h*/
+#endif /*main.h*/
