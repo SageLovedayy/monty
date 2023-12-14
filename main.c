@@ -1,12 +1,6 @@
 #include "main.h"
 
-input_state current_state = {
-	NULL,
-	"\n\t\a\r ;:",
-	NULL,
-	NULL,
-	STACK
-};
+
 
 /**
  * main - entry point
@@ -86,4 +80,3 @@ void (*get(char *opcode))(stack_t **stack, unsigned int line_num)
 
 
 /*Functions=====================*/
-

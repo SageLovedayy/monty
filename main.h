@@ -1,32 +1,15 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef __MAIN_H
+#define __MAIN_H
 
 #define _POSIX_C_SOURCE 200809L
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include <ctype.h>
 #include <stddef.h>
 #include <sys/types.h>
 
-
-/**
- * struct stack_s - doubly linked list representation of a stack (or queue)
- * @n: integer
- * @prev: points to the previous element of the stack (or queue)
- * @next: points to the next element of the stack (or queue)
- *
- * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO
- */
-typedef struct stack_s
-{
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
-} stack_t;
 
 
 /*----------------------------------------------------------*/
@@ -59,9 +42,24 @@ typedef struct input_state
 
 } input_state;
 
-extern input_state current_state;
-/*input_state *createInputState(char *delim);*/
-/*void freeInputState(input_state *state);*/
+
+
+/**
+ * struct stack_s - doubly linked list representation of a stack (or queue)
+ * @n: integer
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
+ *
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct stack_s
+{
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
+} stack_t;
+
 
 /*--------------------------------------------------------*/
 /**
@@ -78,7 +76,13 @@ typedef struct OpcodeHandler
 	void (*handler)(stack_t **stack, unsigned int line_number);
 } OpcodeHandler;
 
-
+input_state current_state = {
+	NULL,
+	"\n\t\a\r ;:",
+	NULL,
+	NULL,
+	STACK
+};
 /*---------------------------------------------------------*/
 /*PROTOTYPES=======*/
 void (*get(char *opcode))(stack_t **stack, unsigned int line_num);
