@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * pushStack - Function to insert a node at the end of the list

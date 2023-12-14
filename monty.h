@@ -1,5 +1,5 @@
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #define _POSIX_C_SOURCE 200809L
 
@@ -76,13 +76,9 @@ typedef struct OpcodeHandler
 	void (*handler)(stack_t **stack, unsigned int line_number);
 } OpcodeHandler;
 
-input_state current_state = {
-	NULL,
-	"\n\t\a\r ;:",
-	NULL,
-	NULL,
-	STACK
-};
+
+
+extern input_state current_state;
 /*---------------------------------------------------------*/
 /*PROTOTYPES=======*/
 void (*get(char *opcode))(stack_t **stack, unsigned int line_num);
@@ -114,4 +110,4 @@ void handleUnknownOpcode(input_state *state
 /* Function to free memory and close the file */
 void cleanupAndExit(input_state *state, stack_t *stack, unsigned int line_num);
 
-#endif /*main.h*/
+#endif /*monty.h*/

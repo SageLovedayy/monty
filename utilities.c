@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  *initInputState - Function to initialize the input state
