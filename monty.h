@@ -128,6 +128,17 @@ void op_sub(stack_t **stack, unsigned int line_number);
 void op_nop(__attribute__((unused)) stack_t **stack
 , __attribute__((unused)) unsigned int line_number);
 
+/*MORE FUNCTIONS---------------*/
+void op_div(stack_t **stack, unsigned int line_number);
+void op_mod(stack_t **stack, unsigned int line_number);
+void op_pchar(stack_t **stack, unsigned int line_number);
+void op_pstr(stack_t **stack, unsigned int line_number);
+void op_mul(stack_t **stack, unsigned int line_number);
+
+
+
+
+
 size_t len(stack_t *stack);
 
 #endif /*monty.h*/
