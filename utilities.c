@@ -89,5 +89,6 @@ void cleanupAndExit(input_state *state, stack_t *stack
 
 	emptyStack(stack);
 	free(state->token);
-	fclose(state->file);
+	if (state->file)
+		fclose(state->file);
 }
