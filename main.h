@@ -11,6 +11,7 @@
 #include <stddef.h>
 #include <sys/types.h>
 
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -58,8 +59,9 @@ typedef struct input_state
 
 } input_state;
 
-
-
+extern input_state current_state;
+/*input_state *createInputState(char *delim);*/
+/*void freeInputState(input_state *state);*/
 
 /*--------------------------------------------------------*/
 /**
@@ -91,5 +93,21 @@ void handle_error(unsigned int line_number, stack_t *stack);
 void push(stack_t **stack, unsigned int line_number);
 
 int is_number(const char *n);
+
+/* Function to initialize the input state */
+void initInputState(input_state *state, char *delim);
+
+/* Function to handle opcode "stack" or "queue" */
+void handleModeOpcode(input_state *state);
+
+/* Function to execute the opcode operation */
+void executeOpcode(input_state *state, stack_t **stack, unsigned int line_num);
+
+/* Function to handle unknown opcode */
+void handleUnknownOpcode(input_state *state
+, stack_t *stack, unsigned int line_num);
+
+/* Function to free memory and close the file */
+void cleanupAndExit(input_state *state, stack_t *stack, unsigned int line_num);
 
 #endif /*main.h*/

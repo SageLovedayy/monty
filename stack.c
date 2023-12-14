@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * pushStack - Function to insert a node at the end of the list (push operation)
- * @list: doubly linked list
- * @data: data
+ * pushStack - Function to insert a node at the end of the list
+ * @head: add descr
+ * @n: add descr
+ * Return: new node
 */
-stack_t *pushStack(stack_t** head, const int n)
+stack_t *pushStack(stack_t **head, const int n)
 {
 	stack_t *new;
 
@@ -34,6 +35,7 @@ stack_t *pushStack(stack_t** head, const int n)
 /**
  * pall_stack - add descr
  * @h: add descr
+ *Return: nodes
 */
 size_t pall_stack(const stack_t *h)
 {

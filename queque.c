@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * pushQueue - add descr
+ *@head: add descr
+ *@n: add descr
+ *Return: new node or null
+*/
 stack_t *pushQueue(stack_t **head, const int n)
 {
 	stack_t *new, *last;

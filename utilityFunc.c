@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ *is_number - Function to check if number
+ *@n: param
+ *Return: 0 if number, non-zero value otherwise
+ */
 int is_number(const char *n)
 {
 	int i = 0;
