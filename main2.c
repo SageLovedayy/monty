@@ -3,11 +3,11 @@
 
 /*Functions=====================*/
 /**
- * push - add descr
+ * op_push - add descr
  *@stack: stack
  *@line_number: line number
 */
-void push(stack_t **stack, unsigned int line_number)
+void op_push(stack_t **stack, unsigned int line_number)
 {
 	/* Get the next token from the input line */
 	current_state.token = strtok(NULL, current_state.delim);
@@ -55,11 +55,11 @@ void handle_error(unsigned int line_number, stack_t *stack)
 }
 
 /**
- * pall - stack op pall
+ * op_pall - stack op pall
  * @stack: stack
  * @line_number: line number
  */
-void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+void op_pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	pall_stack(*stack);
 }

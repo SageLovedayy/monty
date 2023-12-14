@@ -62,11 +62,11 @@ int main(int argc, char **argv)
 void (*get(char *opcode))(stack_t **stack, unsigned int line_num)
 {
 	OpcodeHandler operationMap[] = {
-	{"push", push},
-	{"pall", pall},
-	{"pint", pint},
-	{"pop", pop},
-	{"swap", swap},
+	{"push", op_push},
+	{"pall", op_pall},
+	{"pint", op_pint},
+	{"pop", op_pop},
+	{"swap", op_swap},
 	{"add", op_add},
 	{"nop", op_nop},
 

@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * pint - Print the value at the top of the stack
+ * op_pint - Print the value at the top of the stack
  * @stack: Pointer to the stack
  * @line_number: Line number in the file
  */
-void pint(stack_t **stack, unsigned int line_number)
+void op_pint(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
 	{
@@ -24,11 +24,11 @@ void pint(stack_t **stack, unsigned int line_number)
 
 
 /**
- * pop - Print the value at the top of the stack
+ * op_pop - Print the value at the top of the stack
  * @stack: Pointer to the stack
  * @line_number: Line number in the file
  */
-void pop(stack_t **stack, unsigned int line_number)
+void op_pop(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
 	{
@@ -89,11 +89,11 @@ size_t len(stack_t *stack)
 
 
 /**
- * swap - Perform a swap operation on the stack
+ * op_swap - Perform a swap operation on the stack
  * @stack: Pointer to the stack
  * @line_number: Line number in the file
  */
-void swap(stack_t **stack, unsigned int line_number)
+void op_swap(stack_t **stack, unsigned int line_number)
 {
 	size_t elements = len(*stack);
 	int first_value;

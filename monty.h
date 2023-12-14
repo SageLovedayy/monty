@@ -88,9 +88,11 @@ void emptyStack(stack_t *head);
 
 stack_t *pushQueue(stack_t **head, const int n);
 
-void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number);
+void op_pall(stack_t **stack
+, __attribute__((unused)) unsigned int line_number);
+
 void handle_error(unsigned int line_number, stack_t *stack);
-void push(stack_t **stack, unsigned int line_number);
+void op_push(stack_t **stack, unsigned int line_number);
 
 int is_number(const char *n);
 
@@ -112,12 +114,19 @@ void cleanupAndExit(input_state *state, stack_t *stack, unsigned int line_num);
 
 void freeStack(stack_t *head);
 
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
+void op_pint(stack_t **stack, unsigned int line_number);
+void op_pop(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **h);
-void swap(stack_t **stack, unsigned int line_number);
+void op_swap(stack_t **stack, unsigned int line_number);
 void op_add(stack_t **stack, unsigned int line_number);
-void op_nop(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int line_number);
+
+/**
+ * op_nop - stack op nop
+ * @stack: stack
+ * @line_number: line number
+ */
+void op_nop(__attribute__((unused)) stack_t **stack
+, __attribute__((unused)) unsigned int line_number);
 
 size_t len(stack_t *stack);
 
