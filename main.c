@@ -1,12 +1,12 @@
 #include "monty.h"
 
+char *global(char *nothing);
 input_state current_state = {
 	NULL,
 	"\n\t\a\r ;:",
 	NULL,
 	NULL,
-	STACK
-};
+	STACK};
 
 /**
  * main - entry point
