@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _add - Perform an addition operation on the stack
+ * op_add - Perform an addition operation on the stack
  * @stack: Pointer to the stack
  * @line_number: Line number in the file
  */
@@ -23,3 +23,12 @@ void op_add(stack_t **stack, unsigned int line_number)
 	popStack(stack);
 	(*stack)->n += first_value;
 }
+
+
+/**
+ * op_nop - stack op nop
+ * @stack: stack
+ * @line_number: line number
+ */
+void op_nop(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int line_number)
+{ }
