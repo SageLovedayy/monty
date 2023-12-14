@@ -64,7 +64,7 @@ void (*get(char *opcode))(stack_t **stack, unsigned int line_num)
 	OpcodeHandler operationMap[] = {
 	{"push", push},
 	{"pall", pall},
-	/*{"pint", pint},*/
+	{"pint", pint},
 	/*add more*/
 	{NULL, NULL}};
 

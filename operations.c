@@ -12,11 +12,11 @@ void pint(stack_t **stack, unsigned int line_number)
 		fclose(current_state.file);
 		free(current_state.line);
 
-	fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
-	emptyStack(*stack);
-	exit(EXIT_FAILURE);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		emptyStack(*stack);
+		exit(EXIT_FAILURE);
 
-	return;
+		return;
 	}
 
 	printf("%d\n", (*stack)->n);
