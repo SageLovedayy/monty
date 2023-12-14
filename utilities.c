@@ -77,7 +77,8 @@ void handleUnknownOpcode(input_state *state
 	printf("%s\n", state->token);/*TEST*/
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, state->token);
 	free(state->token);
-	fclose(state->file);
+	if (state->file)
+		fclose(state->file);
 	/*free(state->line);*/
 	exit(EXIT_FAILURE);
 }
