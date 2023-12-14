@@ -116,6 +116,8 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void popStack(stack_t **h);
 void swap(stack_t **stack, unsigned int line_number);
+void op_add(stack_t **stack, unsigned int line_number);
+
 size_t len(stack_t *stack);
 
 #endif /*monty.h*/
