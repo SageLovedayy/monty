@@ -52,7 +52,9 @@ int main(int argc, char **argv)
 	}
 
 	/* Free memory and close the file */
-	/*cleanupAndExit(&current_state, stack, line_num);*/
+	cleanupAndExit(&current_state, stack, line_num);
+
+	free(stack);
 
 	return (0);
 }

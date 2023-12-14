@@ -44,7 +44,7 @@ void handle_error(unsigned int line_number, stack_t *stack)
 {
 	/* Cleanup */
 	if (current_state.file)
-		fclose(current_state.file);
+		fclose(current_state.file); /*Mod: added condition*/
 
 	free(current_state.line);
 
