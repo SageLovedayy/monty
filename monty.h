@@ -113,5 +113,7 @@ void cleanupAndExit(input_state *state, stack_t *stack, unsigned int line_num);
 void freeStack(stack_t *head);
 
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void popStack(stack_t **h);
 
 #endif /*monty.h*/

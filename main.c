@@ -65,6 +65,7 @@ void (*get(char *opcode))(stack_t **stack, unsigned int line_num)
 	{"push", push},
 	{"pall", pall},
 	{"pint", pint},
+	{"pop", pop},
 	/*add more*/
 	{NULL, NULL}};
 
