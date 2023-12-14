@@ -22,7 +22,7 @@ void push(stack_t **stack, unsigned int line_number)
 	/* Check if the token is a valid number */
 	if (is_number(current_state.token) != 0)
 	{
-		printf("not a number: %s\n", current_state.token);
+		/*printf("not a number: %s\n", current_state.token);*/
 		handle_error(line_number, *stack);
 		return;
 	}
@@ -43,7 +43,9 @@ void push(stack_t **stack, unsigned int line_number)
 void handle_error(unsigned int line_number, stack_t *stack)
 {
 	/* Cleanup */
-	fclose(current_state.file);
+	if (current_state.file)
+		fclose(current_state.file);
+
 	free(current_state.line);
 
 	/* Handle failure */
@@ -61,4 +63,5 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	pall_stack(*stack);
 }
+
 

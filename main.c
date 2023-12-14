@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 	}
 
 	/* Free memory and close the file */
-	cleanupAndExit(&current_state, stack, line_num);
+	/*cleanupAndExit(&current_state, stack, line_num);*/
 
 	return (0);
 }
@@ -70,6 +70,7 @@ void (*get(char *opcode))(stack_t **stack, unsigned int line_num)
 	OpcodeHandler operationMap[] = {
 	{"push", push},
 	{"pall", pall},
+	/*{"pint", pint},*/
 	/*add more*/
 	{NULL, NULL}};
 
