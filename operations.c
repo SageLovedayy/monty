@@ -9,13 +9,13 @@ void op_pint(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
 	{
-		fclose(current_state.file);
-		free(current_state.line);
-
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		free(current_state.line);
+		if (current_state.file)
+			fclose(current_state.file);
+
 		emptyStack(*stack);
 		exit(EXIT_FAILURE);
-
 		return;
 	}
 
