@@ -69,6 +69,7 @@ void (*get(char *opcode))(stack_t **stack, unsigned int line_num)
 	{"swap", op_swap},
 	{"add", op_add},
 	{"nop", op_nop},
+	{"sub", op_sub},
 
 	/*add more*/
 	{NULL, NULL}};
