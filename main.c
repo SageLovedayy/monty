@@ -22,27 +22,22 @@ int main(int argc, char **argv)
 	ssize_t read;
 	unsigned int line_num;
 
-
 	/* Check for correct number of command-line arguments */
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	/* Initialize the input state */
 	initInputState(&current_state, "\n\t\a\r ;:");
-
 	/* Open the file specified in the command-line argument in read-only mode */
 	current_state.file = fopen(argv[1], "r");
-
 	/* Check if the file could be opened successfully */
 	if (!current_state.file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	/* Loop through each line in the file */
 	for (line_num = 1; (read = getline(&current_state.line, &len
 	, current_state.file)) != EOF; line_num++)
@@ -50,12 +45,9 @@ int main(int argc, char **argv)
 		/* Tokenize the current line and execute opcode */
 		executeOpcode(&current_state, &stack, line_num);
 	}
-
 	/* Free memory and close the file */
 	cleanupAndExit(&current_state, stack, line_num);
-
 	/*free(stack);*/
-
 	return (0);
 }
 

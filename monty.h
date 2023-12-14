@@ -110,4 +110,6 @@ void handleUnknownOpcode(input_state *state
 /* Function to free memory and close the file */
 void cleanupAndExit(input_state *state, stack_t *stack, unsigned int line_num);
 
+void freeStack(stack_t *head);
+
 #endif /*monty.h*/
