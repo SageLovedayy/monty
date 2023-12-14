@@ -12,9 +12,12 @@ void op_add(stack_t **stack, unsigned int line_number)
 
 	if (elements < 2)
 	{
-		fclose(current_state.file);
-		free(current_state.line);
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+
+		free(current_state.line);
+		if (current_state.file)
+			fclose(current_state.file);
+
 		emptyStack(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -46,10 +49,11 @@ void op_sub(stack_t **stack, unsigned int line_number)
 
 	if (elements < 2)
 	{
-		fclose(current_state.file);
-		free(current_state.line);
-
 		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		free(current_state.line);
+		if (current_state.file)
+			fclose(current_state.file);
+
 		emptyStack(*stack);
 		exit(EXIT_FAILURE);
 	}
