@@ -74,7 +74,6 @@ void handleUnknownOpcode(input_state *state
 , __attribute__((unused)) stack_t *stack, unsigned int line_num)
 {
 
-	printf("%s\n", state->token);/*TEST*/
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, state->token);
 	free(state->token);
 	if (state->file)
