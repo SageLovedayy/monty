@@ -33,7 +33,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack)
 	{
 		if (current_state.file)
-			fclose (current_state.file);
+			fclose(current_state.file);
 		free(current_state.line);
 
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
