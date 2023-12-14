@@ -73,10 +73,12 @@ void executeOpcode(input_state *state, stack_t **stack, unsigned int line_num)
 void handleUnknownOpcode(input_state *state
 , __attribute__((unused)) stack_t *stack, unsigned int line_num)
 {
-	fclose(state->file);
-	free(state->line);
+
+	printf("%s\n", state->token);/*TEST*/
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, state->token);
 	free(state->token);
+	fclose(state->file);
+	/*free(state->line);*/
 	exit(EXIT_FAILURE);
 }
 
