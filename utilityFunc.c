@@ -18,3 +18,14 @@ int is_number(const char *n)
 	}
 	return (0);
 }
+
+
+/**
+ * isascii - Check if a character is an ASCII character
+ * @c: Character to check
+ * Return: 1 if ASCII, 0 otherwise
+ */
+int isascii(int c)
+{
+	return (c >= 0 && c <= 127);
+}
