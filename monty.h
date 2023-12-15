@@ -96,6 +96,7 @@ void op_push(stack_t **stack, unsigned int line_number);
 
 int is_number(const char *n);
 int isascii(int c);
+int is_ascii_and_nonzero(int c);
 
 /* Function to initialize the input state */
 void initInputState(input_state *state, char *delim);
@@ -133,7 +134,7 @@ void op_nop(__attribute__((unused)) stack_t **stack
 void op_div(stack_t **stack, unsigned int line_number);
 void op_mod(stack_t **stack, unsigned int line_number);
 void op_pchar(stack_t **stack, unsigned int line_number);
-/*void op_pstr(stack_t **stack, unsigned int line_number);*/
+void op_pstr(stack_t **stack, unsigned int line_number);
 void op_mul(stack_t **stack, unsigned int line_number);
 
 

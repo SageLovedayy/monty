@@ -149,3 +149,21 @@ void op_pchar(stack_t **stack, unsigned int line_number)
 	putchar(ascii_value);
 	putchar('\n');
 }
+
+/**
+ * op_pstr - Print the string starting from the top of the stack
+ * @stack: Pointer to the stack
+ * @line_number: Line number in the file
+ */
+void op_pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+{
+	stack_t *temp = *stack;
+
+	while (temp && is_ascii_and_nonzero(temp->n))
+	{
+		putchar(temp->n);
+		temp = temp->next;
+	}
+
+	putchar('\n');
+}

@@ -29,3 +29,14 @@ int isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }
+
+
+/**
+ * is_ascii_and_nonzero - Check if char is ASCII char & nonzero
+ * @c: Character to check
+ * Return: 1 if ASCII and nonzero, 0 otherwise
+ */
+int is_ascii_and_nonzero(int c)
+{
+	return (isascii(c) && c != 0);
+}
