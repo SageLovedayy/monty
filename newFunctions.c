@@ -120,7 +120,7 @@ void op_pchar(stack_t **stack, unsigned int line_number)
 {
 	int ascii_value;
 
-	if (!stack || !*stack)
+	if (!(*stack))
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 
