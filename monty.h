@@ -138,6 +138,8 @@ void op_pstr(stack_t **stack, unsigned int line_number);
 void op_mul(stack_t **stack, unsigned int line_number);
 void op_rotl(stack_t **stack
 , __attribute__((unused)) unsigned int line_number);
+void op_rotr(stack_t **stack
+, __attribute__((unused)) unsigned int line_number);
 
 size_t len(stack_t *stack);
 
