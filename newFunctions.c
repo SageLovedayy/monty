@@ -78,7 +78,7 @@ void op_mul(stack_t **stack, unsigned int line_number)
 void op_mod(stack_t **stack, unsigned int line_number)
 {
 	size_t elements = len(*stack);
-	int factor;
+	int divisor;
 
 	if (elements < 2)
 	{
@@ -92,8 +92,20 @@ void op_mod(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	factor = (*stack)->n;
+	divisor = (*stack)->n;
+
+	if (divisor == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_number);
+
+		free(current_state.line);
+		if (current_state.file)
+			fclose(current_state.file);
+
+		emptyStack(*stack);
+		exit(EXIT_FAILURE);
+	}
 
 	popStack(stack);
-	(*stack)->n *= factor;
+	(*stack)->n *= divisor;
 }
