@@ -7,17 +7,24 @@
  */
 void op_rotl(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
-	size_t elements = len(*stack);
-	int value;
+	stack_t *first, *last;
 
-	if (elements < 2)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 
-	value = (*stack)->n;
+	first = (*stack)->next;
+	last = first;
 
-	popStack(stack);
-	pushQueue(stack, value);
+	while (last->next != NULL)
+		last = last->next;
+
+	(*stack)->next = first->next;
+	first->next->prev = *stack;
+	last->next = first;
+	first->next = NULL;
+	first->prev = last;
 }
+
 
 
 /**
