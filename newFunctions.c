@@ -122,28 +122,28 @@ void op_pchar(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack)
 	{
-		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 
-	free(current_state.line);
-	if (current_state.file)
-		fclose(current_state.file);
+		free(current_state.line);
+		if (current_state.file)
+			fclose(current_state.file);
 
-	emptyStack(*stack);
-	exit(EXIT_FAILURE);
+		emptyStack(*stack);
+		exit(EXIT_FAILURE);
 	}
 
 	ascii_value = (*stack)->n;
 
 	if (!isascii(ascii_value))
 	{
-		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 
-	free(current_state.line);
-	if (current_state.file)
-		fclose(current_state.file);
+		free(current_state.line);
+		if (current_state.file)
+			fclose(current_state.file);
 
-	emptyStack(*stack);
-	exit(EXIT_FAILURE);
+		emptyStack(*stack);
+		exit(EXIT_FAILURE);
 	}
 
 	putchar(ascii_value);
