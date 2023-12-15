@@ -75,6 +75,7 @@ void (*get(char *opcode))(stack_t **stack, unsigned int line_num)
 	{"mod", op_mod},
 	{"pchar", op_pchar},
 	{"pstr", op_pstr},
+	{"rotl", op_rotl},
 	/*add more*/
 	{NULL, NULL}};
 
