@@ -68,3 +68,32 @@ void op_mul(stack_t **stack, unsigned int line_number)
 	popStack(stack);
 	(*stack)->n *= factor;
 }
+
+
+/**
+ * op_mod - returns the remainder of int division
+ * @stack: Pointer to the stack
+ * @line_number: Line number in the file
+ */
+void op_mod(stack_t **stack, unsigned int line_number)
+{
+	size_t elements = len(*stack);
+	int factor;
+
+	if (elements < 2)
+	{
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+
+		free(current_state.line);
+		if (current_state.file)
+			fclose(current_state.file);
+
+		emptyStack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	factor = (*stack)->n;
+
+	popStack(stack);
+	(*stack)->n *= factor;
+}
