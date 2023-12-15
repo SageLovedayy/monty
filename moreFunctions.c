@@ -7,14 +7,23 @@
  */
 void op_rotl(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
-	size_t elements = len(*stack);
-	int value;
+	stack_t *temp = *stack;
 
-	if (elements < 2)
+	if (temp == NULL || temp->next == NULL)
 		return;
 
-	value = (*stack)->n;
-
+	/* Remove the top element from the stack */
 	popStack(stack);
-	pushQueue(stack, value);
+
+	/* Traverse the stack to find the last node */
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	/* Make the removed element the last node */
+	temp->next = *stack;
+	(*stack)->prev = temp;
+
+	/* Update the stack to point to the new top element */
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
 }
